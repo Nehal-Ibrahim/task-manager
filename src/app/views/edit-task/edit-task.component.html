@@ -1,0 +1,43 @@
+
+<form class="container" #updateform="ngForm" (ngSubmit)='updateTask(updateform.value)'>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input
+        type="text"
+        class="form-control"
+        id="description"
+        name="description"
+        ngModel
+        #description="ngModel"
+        required
+        minlength="10"
+      />
+      <div
+        class="errors d-flex justify-content-center"
+        *ngIf="description.touched && description.invalid"
+      >
+        <div *ngIf="description.errors?.['required']">
+          *description is required
+        </div>
+        <div *ngIf="description.errors?.['minlength']">
+          *description minlength is
+          {{description.errors?.['minlength'].requiredLength}}
+        </div>
+      </div>
+    </div>
+    <!-- -------------------------------------------------------------- -->
+  
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="completed"
+        name="completed"
+        ngModel
+        #completed="ngModel"
+      />
+      <label class="form-check-label" for="completed">Completed</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  

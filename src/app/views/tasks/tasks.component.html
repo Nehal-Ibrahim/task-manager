@@ -1,0 +1,15 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Completed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let task of tasks'>
+        <td colspan="2">{{task.description}}</td>
+        <td>{{task.completed}}</td>
+        <td><button type="submit" btn btn-sm btn-danger (click)='deleteTask(task)'></button> </td>
+      </tr>
+    </tbody>
+  </table>
