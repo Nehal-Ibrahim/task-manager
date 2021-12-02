@@ -18,6 +18,9 @@ export class TaskService {
   deleteTask(id:any){
     return this.http.delete(this.url+'tasks'+id)
   }
+  getsingletask(id:any){
+    return this.http.get<Task>(this.url+id)
+  }
   updateTask(id:any, data:Tasks){
     return this.http.patch(this.url+'tasks'+id,data)
   }

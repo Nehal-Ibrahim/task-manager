@@ -15,6 +15,7 @@ export class AddTaskComponent implements OnInit {
   addTask(task:Tasks){
     this.taskservice.addTask(task).subscribe({
       next:(res:any)=>{
+        console.log('test')
         console.log(res)
         this.task=res
         this.router.navigate(['/tasks'])

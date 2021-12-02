@@ -9,7 +9,7 @@
       ngModel
       #description="ngModel"
       required
-      minlength="10"
+      minlength="3"
     />
     <div
       class="errors d-flex justify-content-center"
@@ -32,6 +32,7 @@
       class="form-check-input"
       id="completed"
       name="completed"
+      [(ngModel)]='task.completed'
       ngModel
       #completed="ngModel"
     />

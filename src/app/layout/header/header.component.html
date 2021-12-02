@@ -9,6 +9,7 @@
           <a class="nav-link" routerLink="/signup" *ngIf='isLoogedIn'>SignUp</a>
           <a class="nav-link" routerLink="/" *ngIf='isLoogedIn'>LogIn</a>
           <a class="nav-link" routerLink="/" (click)='logout()' *ngIf='!isLoogedIn'>Logout</a>
+          <a class="nav-link" routerLink="editprofile" *ngIf='!isLoogedIn'>Edit</a>
         </div>
       </div>
     </div>

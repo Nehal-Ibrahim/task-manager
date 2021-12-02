@@ -10,6 +10,7 @@
         <td colspan="2">{{task.description}}</td>
         <td>{{task.completed}}</td>
         <td><button type="submit" btn btn-sm btn-danger (click)='deleteTask(task)'></button> </td>
+        <td><button type="submit" btn btn-sm btn-primary (click)='updateTask(task)'></button> </td>
       </tr>
     </tbody>
   </table>

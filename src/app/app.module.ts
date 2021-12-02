@@ -17,6 +17,7 @@ import { AddTaskComponent } from './views/add-task/add-task.component';
 import { TasksComponent } from './views/tasks/tasks.component';
 import { TaskService } from './services/task.service';
 import { EditTaskComponent } from './views/edit-task/edit-task.component';
+import { EditProfileComponent } from './views/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { EditTaskComponent } from './views/edit-task/edit-task.component';
     ProfileComponent,
     AddTaskComponent,
     TasksComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,
