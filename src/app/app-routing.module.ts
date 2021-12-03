@@ -15,7 +15,7 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'addtask',component:AddTaskComponent},
   {path:'tasks',component:TasksComponent},
-  {path:'edit',component:EditTaskComponent},
+  {path:'edit/:id',component:EditTaskComponent},
   {path:'editprofile',component:EditProfileComponent}
 ];
 

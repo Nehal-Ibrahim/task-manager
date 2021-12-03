@@ -11,6 +11,7 @@ import { UserserviceService } from 'src/app/services/userservice.service';
 export class EditProfileComponent implements OnInit {
 
   constructor(private userservice:UserserviceService , private router:Router) { }
+  file:any
   user:User={}
   getuser(){
     this.userservice.getprofile().subscribe({
@@ -23,9 +24,22 @@ export class EditProfileComponent implements OnInit {
     this.userservice.updateprofile(user).subscribe({
       next:()=>{
         this.router.navigate(['/profile'])
+        this.uploadfile()
         
       }
     })
+  }
+  handleupload(event:any){
+    console.log(event.target.files)
+    this.file=event.target.files
+  }
+  uploadfile(){
+    const myData=new FormData()
+    for(let i=0;i<this.file.length;i++){
+      myData.append('avatar',this.file[i])
+
+    }
+    this.userservice.addImage(myData).subscribe(()=>{})
   }
 
   ngOnInit(): void {

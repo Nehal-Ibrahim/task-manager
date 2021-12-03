@@ -16,13 +16,13 @@ export class TaskService {
     return this.http.post(this.url+'tasks', task)
   }
   deleteTask(id:any){
-    return this.http.delete(this.url+'tasks'+id)
+    return this.http.delete(this.url+'tasks/'+id)
   }
   getsingletask(id:any){
-    return this.http.get<Tasks>(this.url+id)
+    return this.http.get<Tasks>(this.url+'tasks/'+id)
   }
-  updateTask(id:any, data:Tasks){
-    return this.http.patch(this.url+'tasks'+id,data)
+  updateTask(id:any, task:Tasks){
+    return this.http.patch(this.url+'tasks/'+id,task)
   }
 
 }

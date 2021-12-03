@@ -26,6 +26,7 @@
       </div>
     </div>
   </div>
+  <input type="file" (change)="handleupload($event)" name="avatar" accept="image/*">
 
   <button type="submit" class="btn btn-sm btn-primary"[disabled]='myform.invalid'>Submit</button>
 </form>

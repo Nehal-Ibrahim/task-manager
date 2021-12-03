@@ -10,11 +10,22 @@ import { TaskService } from 'src/app/services/task.service';
 })
 export class EditTaskComponent implements OnInit {
 
-  constructor(private taskservice:TaskService , private route:ActivatedRoute) { }
+  constructor(private taskservice:TaskService , private route:ActivatedRoute , private router:Router) { }
   task:Tasks={}
+  id:string=this.route.snapshot.params['id']
+  getsingletask(){
+    this.taskservice.getsingletask(this.id).subscribe({
+      next:(res:any)=>{
+        console.log(res)
+        this.task=res
+      }
+    })
+  }
 updateTask(task:Tasks){
-    this.taskservice.updateTask(task._id,task).subscribe({
-      next:()=>{
+    this.taskservice.updateTask(this.id,task).subscribe({
+      next:(res:any)=>{
+        this.task=res
+        this.router.navigate(['/tasks'])
        
       }
 
@@ -22,6 +33,7 @@ updateTask(task:Tasks){
   }
 
   ngOnInit(): void {
+    this.getsingletask()
   }
 
 }

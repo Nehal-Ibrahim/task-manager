@@ -18,4 +18,7 @@ export class UserserviceService {
   updateprofile(user:User){
     return this.http.patch(this.url+'profile',user)
   }
+  addImage(image:any){
+    return this.http.post(this.url+'profiles',image)
+  }
 }
